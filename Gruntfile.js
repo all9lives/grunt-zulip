@@ -35,13 +35,6 @@ module.exports = function(grunt) {
           email: 'ZULIP BOT EMAIL ADDRESS',
           api_key: 'API KEY'
         },
-      },
-      server_update: {
-        options: {
-          email: 'ZULIP BOT EMAIL ADDRESS',
-          api_key: 'API KEY'
-          content: 'new content'
-        }
       }
     },
 
@@ -64,7 +57,7 @@ module.exports = function(grunt) {
   // plugin's task(s), then test the result.
   // grunt.registerTask('test', ['clean', 'zulip', 'nodeunit']);
 
-  grunt.registerTask('default', ['zulip:server_update']);
+  grunt.registerTask('default', ['zulip']);
 
   // By default, lint and run all tests.
   // grunt.registerTask('default', ['jshint', 'test']);

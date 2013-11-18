@@ -16,14 +16,13 @@ module.exports = function(grunt) {
   var zulip = require('zulip');
 
   grunt.registerMultiTask('zulip', 'Grunt plugin to send messages to the zulip chat service when grunt tasks are run.', function() {
-    // Merge task-specific and/or target-specific options with these defaults.
-    var done = this.async();
 
     var options = this.options({
         content: "test content",
         to: ['grunt-test'],
         subject: "test subject"
     });
+
 
     var client = new zulip.Client({
         email: options.email,
