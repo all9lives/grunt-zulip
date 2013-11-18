@@ -38,8 +38,10 @@ module.exports = function(grunt) {
     }, function (error, response) {
         if (error) {
             grunt.log.writeln("Something went wrong!", error);
+            done();
         } else {
             grunt.log.writeln("Message sent!");
+            done();
         }
     });
 
