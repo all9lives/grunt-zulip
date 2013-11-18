@@ -17,12 +17,13 @@ module.exports = function(grunt) {
 
   grunt.registerMultiTask('zulip', 'Grunt plugin to send messages to the zulip chat service when grunt tasks are run.', function() {
 
+    var done = this.async();
+
     var options = this.options({
         content: "test content",
         to: ['grunt-test'],
         subject: "test subject"
     });
-
 
     var client = new zulip.Client({
         email: options.email,
@@ -38,10 +39,8 @@ module.exports = function(grunt) {
     }, function (error, response) {
         if (error) {
             grunt.log.writeln("Something went wrong!", error);
-            done();
         } else {
             grunt.log.writeln("Message sent!");
-            done();
         }
     });
 
